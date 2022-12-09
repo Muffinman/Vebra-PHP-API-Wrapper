@@ -18,8 +18,8 @@
         }
     ],
     "require": {
-        "php": ">=5.3.2",
-        "kriswallsmith/buzz": "*"
+        "php": "^7.4|^8.0",
+        "kriswallsmith/buzz": "^0.9"
     },
     "autoload": {
         "psr-0": {
