@@ -147,7 +147,7 @@ class API
             // Unauthorized
             case 401:
                 if ($secondAttempt) {
-                    throw new UnauthorizedException;
+                    throw new UnauthorizedException($response->getContent());
                 }
 
                 // The token may have expired, request a new token
@@ -158,7 +158,7 @@ class API
 
                 if (401 === $tokenResponse->getStatusCode()) {   
                     // Unauthorized: current token hasn't expired or invalid credentials
-                    throw new UnauthorizedException;
+                    throw new UnauthorizedException($tokenResponse->getContent());
                 }
 
                 // save the token
