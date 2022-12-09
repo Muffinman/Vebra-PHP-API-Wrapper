@@ -244,8 +244,8 @@ class API
 
         $branch = new Branch;
         $branch->setClientId($clientId);
-        $branch->setFirmId(self::normalise($xml{'FirmID'}, 'int'));
-        $branch->setBranchId(self::normalise($xml->{'BranchID'}, 'int'));
+        $branch->setFirmId(self::normalise($xml->firmid, 'int'));
+        $branch->setBranchId(self::normalise($xml->branchid, 'int'));
         $branch->setName(self::normalise($xml->name, 'string'));
         $branch->setStreet(self::normalise($xml->street, 'string'));
         $branch->setTown(self::normalise($xml->town, 'string'));
